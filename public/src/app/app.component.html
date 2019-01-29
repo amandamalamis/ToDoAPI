@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<h1> To Do List: </h1>
+
+
+<h1> List of all the items:</h1>
+<ul *ngFor="let item of items">
+  <li> Item: {{item.name}} </li>
+  <li> ID Number: {{item._id}} </li>
+  <li> Completed? : {{item.status}} </li>
+
+
+</ul>
+
+<button (click)="get_all()">GET ALL ITEMS</button>
+<router-outlet></router-outlet>
