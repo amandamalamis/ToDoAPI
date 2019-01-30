@@ -8,13 +8,17 @@ import { HttpService } from './http.service';
 })
 
 export class AppComponent implements OnInit {
-  title = 'public';
+  title = 'Google Maps:';
   items : any;
   _id : '';
+  lat: number = 41.8781;
+  lng: number = -87.6298;
+  zoom: 10
+
+
   // list_all_items: { name: string; description: string; };
 
   constructor(private _httpService: HttpService){}
-
 
   ngOnInit() {
     // this.list_all_items = { name: "", description: "" }
@@ -29,5 +33,11 @@ export class AppComponent implements OnInit {
     })
   }
 
+  ///this adds markers where a click is made:
+  onClickedLocation(event){
+    console.log(event);
+    this.lat = event.coords.lat;
+    this.lng = event.coords.lng;
 
+  }
 }

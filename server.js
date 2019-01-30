@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 var routes = require('./api/routes/ToDoRoutes'); //importing route
 routes(app); //register the route
 
-app.use(function(req, res) {
-    res.status(404).send({url: req.originalUrl + ' Your URL has not been found. Please try again!'})
-  });
+// app.use(function(req, res) {
+//     res.status(404).send({url: req.originalUrl + ' Your URL has not been found. Please try again!'})
+//   });
 
 
 app.listen(port);

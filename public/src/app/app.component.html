@@ -1,17 +1,20 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-
 <h1> To Do List: </h1>
 
-
 <h1> List of all the items:</h1>
+<button (click)="get_all()">GET ALL ITEMS</button>
+
 <ul *ngFor="let item of items">
   <li> Item: {{item.name}} </li>
   <li> ID Number: {{item._id}} </li>
   <li> Completed? : {{item.status}} </li>
-
-
 </ul>
 
-<button (click)="get_all()">GET ALL ITEMS</button>
+<h1>{{ title }}</h1>
+
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onClickedLocation($event)">
+  <agm-marker [latitude]="lat" [longitude]="lng">
+  </agm-marker>
+</agm-map>
+
+<button [routerLink]="['/']">Home</button>
 <router-outlet></router-outlet>
